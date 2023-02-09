@@ -14,14 +14,15 @@ public class Calcul {
 
 
     public int start (String input){
-        String [] params = input.split("");
+        String [] params = input.split(" ");
 
         int count = params.length;
-        for (int i = 0; i < count; i++){
+        status = Integer.parseInt(params[0]);
+        for (int i = 1; i < count; i++){
             boolean number = isThisNumber(params[i]);
-
+            calculate(number, params[i]);
         }
-        return 0;
+        return status;
     }
 
 
@@ -40,30 +41,30 @@ public class Calcul {
         }
     }
 
-    public void calculate (boolean status, String param){
-        if(!status){
-            this.symbol = param;
+    public void calculate (boolean flag, String param){
+        if(!flag){
+            symbol = param;
             return;
         }
 
 
-        if(this.symbol=="/"){
-            this.status = this.status / Integer.parseInt(param);
+        if(symbol.equals("/")){
+            status = status / Integer.parseInt(param);
             return;
         }
 
-        if(this.symbol=="*"){
-            this.status = this.status * Integer.parseInt(param);
+        if(symbol.equals("*")){
+            status = status * Integer.parseInt(param);
             return;
         }
 
-        if(this.symbol=="+"){
-            this.status = this.status + Integer.parseInt(param);
+        if(symbol.equals("+")){
+            status = status + Integer.parseInt(param);
             return;
         }
 
-        if(this.symbol=="-"){
-            this.status = this.status - Integer.parseInt(param);
+        if(symbol.equals("-")){
+            status = status - Integer.parseInt(param);
             return;
         }
     }

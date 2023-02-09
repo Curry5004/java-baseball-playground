@@ -24,14 +24,14 @@ public class TestPage {
     @DisplayName("값 변환 여부 확인")
     void isThisNumber(){
         assertThat(this.cal.isThisNumber("$")).isFalse();
+        assertThat(this.cal.isThisNumber("3")).isTrue();
     }
 
-    @ParameterizedTest
+    @Test
     @DisplayName("연산 확인")
-    @ValueSource(strings = {"/", "*", "+", "-"})
-    void calculate (String symbol){
-        this.cal.calculate(false, symbol);
-//        assertThat(this.cal.calculate(true, "1"));
+    void calculate (){
+        String test = "2 + 3 * 4 / 2";
+        assertThat(this.cal.start(test)).isEqualTo(10);
     }
 
     @AfterEach
