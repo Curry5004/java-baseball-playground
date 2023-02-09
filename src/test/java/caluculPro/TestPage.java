@@ -21,17 +21,17 @@ public class TestPage {
     }
 
     @Test
-    @DisplayName("계산 테스트")
-    void test (){
+    @DisplayName("값 변환 여부 확인")
+    void isThisNumber(){
+        assertThat(this.cal.isThisNumber("$")).isFalse();
+    }
 
-        String input = "1 + 2 k 3";
-        OutputStream out = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(out));
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-        int result = this.cal.input();
-
-        assertThat(result).isEqualTo(19);
+    @ParameterizedTest
+    @DisplayName("연산 확인")
+    @ValueSource(strings = {"/", "*", "+", "-"})
+    void calculate (String symbol){
+        this.cal.calculate(false, symbol);
+//        assertThat(this.cal.calculate(true, "1"));
     }
 
     @AfterEach

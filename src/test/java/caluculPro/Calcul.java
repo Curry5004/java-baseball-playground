@@ -9,24 +9,21 @@ public class Calcul {
     private String symbol;              //수학 기호
     public Calcul (){
         this.scan = new Scanner(System.in);
-        this.status = 0;
         this.symbol = "";
     }
 
-    public int input(){
-        String value = scan.nextLine();
-        String[] values = value.split("");
-        int length = values.length;
-        this.status = Integer.parseInt(values[0]);
 
-        for(int i = 1;  i < length; i++){
-            String param =  values[i];
-            boolean numVali = isThisNumber(param);
-            calculate(numVali, param);
+    public int start (String input){
+        String [] params = input.split("");
+
+        int count = params.length;
+        for (int i = 0; i < count; i++){
+            boolean number = isThisNumber(params[i]);
+
         }
-
-        return this.status;
+        return 0;
     }
+
 
     public boolean isThisNumber (String param){
         boolean flag = true;
@@ -44,20 +41,30 @@ public class Calcul {
     }
 
     public void calculate (boolean status, String param){
-        if(status){
+        if(!status){
             this.symbol = param;
             return;
         }
 
-        switch (this.symbol){
-            case "/":
-                this.status = this.status / Integer.parseInt(param);
-            case "*":
-                this.status = this.status * Integer.parseInt(param);
-            case "+":
-                this.status = this.status + Integer.parseInt(param);
-            case "-":
-                this.status = this.status - Integer.parseInt(param);
+
+        if(this.symbol=="/"){
+            this.status = this.status / Integer.parseInt(param);
+            return;
+        }
+
+        if(this.symbol=="*"){
+            this.status = this.status * Integer.parseInt(param);
+            return;
+        }
+
+        if(this.symbol=="+"){
+            this.status = this.status + Integer.parseInt(param);
+            return;
+        }
+
+        if(this.symbol=="-"){
+            this.status = this.status - Integer.parseInt(param);
+            return;
         }
     }
 }
