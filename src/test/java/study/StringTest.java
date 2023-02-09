@@ -24,6 +24,7 @@ public class StringTest {
         String [] result2 = {"1"};
         assertThat(test).contains("2","2"); //tue
         assertThat(test2).containsExactly("1");
+        System.out.println("test");
 
         //List에서도 사용 가능한가?
         List <String> test3 = new ArrayList<>();
