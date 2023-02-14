@@ -2,8 +2,6 @@ package baseball.test;
 
 
 import baseball.components.ScoreMaker;
-import baseball.components.Validation;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
