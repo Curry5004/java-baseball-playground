@@ -27,13 +27,6 @@ public class CoreTest {
         assertThat(result.length()).isEqualTo(3);
     }
 
-    @Test
-    @DisplayName("스코어 컨버터 - 3자리의 int[]을 리턴하는가?")
-    void scoreConvert (){
-        String input = "123";
-        assertThat(this.score.scoreConverter(input).length).isEqualTo(3);
-    }
-
     @AfterEach
     @DisplayName("객체 소멸")
     void turnOver (){
