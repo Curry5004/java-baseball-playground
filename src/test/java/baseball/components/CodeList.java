@@ -10,5 +10,5 @@ public class CodeList {
     public static final String VALIDATION_SCORE_PATTERN = "^[1-9]*$";
     public static final String VALIDATION_MENU_PATTERN = "^[1-2]*$";
     public static final int VALIDATION_SCORE_LENGTH = 3;
-    public static final int VALIDATION_SCORE_MENU = 1;
+    public static final int VALIDATION_MENU_LENGTH = 1;
 }

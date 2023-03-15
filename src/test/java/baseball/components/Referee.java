@@ -19,7 +19,7 @@ public class Referee {
 
         for(int i=0; i<SCORE_LENGTH; i++){
             String scoreCode = "";
-            String temp = input.substring(i,i);
+            String temp = input.substring(i,i+1);
 
             scoreCode = judgeProcessing(temp,i);
             score.countUp(scoreCode);
@@ -42,4 +42,12 @@ public class Referee {
         return RESULT_BALL;
     }
 
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
 }

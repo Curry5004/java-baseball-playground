@@ -18,6 +18,10 @@ public class Validation {
         return vali;
     }
 
+
+    /**
+     * input값 검증 로직.
+     * */
     public boolean inputVali(Vali vali){
         boolean flag = true;
         String pattern = vali.getPattern();
@@ -51,10 +55,11 @@ public class Validation {
      */
     public boolean isDuplicate(String input){
         String flag = "";
+        int length = input.length();
 
-        for(int i = 0; i<SCORE_LENGTH-1; i++){
+        for(int i = 0; i<length; i++){
             String temp = input.substring(i,i+1);
-            String control = input.substring(i+1, SCORE_LENGTH);
+            String control = input.substring(i+1, length);
 
             flag = flag + control.contains(temp);
         }

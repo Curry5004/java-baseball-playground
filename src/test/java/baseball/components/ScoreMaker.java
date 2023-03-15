@@ -17,6 +17,9 @@ public class ScoreMaker {
         //생성된 난수에 0 포함 -> 난수 생성 다시 진행
         if(result.contains("0")) {return getScore();};
 
+        //중복 값 있을 때 -> 난수 다시 생성
+        if(vali.isDuplicate(result)){return getScore();};
+
         return result;
     }
 
