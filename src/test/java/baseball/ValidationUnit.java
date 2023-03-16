@@ -20,7 +20,8 @@ public class ValidationUnit {
         return false;
     }
 
-    public static boolean numberDuplicationValidation(int i) {
+    public static boolean numberDuplicationValidation(int input) {
+        String number = String.valueOf(input);
 
         return false;
     }
