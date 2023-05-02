@@ -7,7 +7,7 @@ public class ValidationUnit {
     private static final int MIN_NO = 1;
 
     public static boolean isThatThreeNumber(int number) {
-        if((int)(Math.log10(number)+1)==SCORE_LENGTH){
+        if((int)(Math.log10(number)+1)==SCORE_LEgNGTH){
             return true;
         }
         return false;
